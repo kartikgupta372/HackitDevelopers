@@ -1,71 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutriMom.AI</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>NutriMom.AI</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">NutriMom.AI</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">About Us</a></li>
+  <!-- NavBar -->
+  <nav>
+    <div class="logo-container">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/871a6d5faf9578c9ff69c07025a4eb44c6c57c7dda6af61774b7ff0655363fa3?placeholderIfAbsent=true" alt="NutriMom.AI Logo" class="logo-img">
+      <div class="logo-text">NutriMom<span>AI</span></div>
+    </div>
+    
+    <div class="desktop-nav">
+      <a href="#">Home</a>
+      <a href="#">Community</a>
+      <a href="#">Chat AI</a>
+    </div>
+    
+    <div class="mobile-nav">
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+    
+    <button class="login-btn">Sign In / Log In</button>
+  </nav>
+  
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1 class="hero-heading">
+          <span>Your Pregnancy,</span><br>
+          <span>Your Nutrition</span><br>
+          <span>— Guided by</span><br>
+          NutriMom.AI
+        </h1>
+      </div>
+      <div class="hero-image">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f3c01cde0d5a9b11f46634d1eb47b9d9b646bcd2859d72973d5104a1d451cc58?placeholderIfAbsent=true" alt="Pregnancy Nutrition Guide" class="hero-img">
+      </div>
+    </div>
+  </section>
+  
+  <!-- About -->
+  <section class="about">
+    <h2 class="section-title">What is NutriMom.AI</h2>
+    <p class="about-text">
+      NutriMom is an AI-powered mobile app designed to provide personalized
+      nutrition guidance for pregnant women and mothers with young children.
+      By leveraging advanced AI and machine learning, NutriMom creates
+      tailored meal plans, nutrient-rich recipes, and real-time tracking to
+      ensure optimal health for both mother and baby. Users can log their
+      meals, track essential nutrients, and receive instant feedback to stay
+      on top of their health goals. The app also features a supportive
+      community and expert consultations with certified nutritionists,
+      empowering mothers with the knowledge and tools they need for a healthy
+      pregnancy and early motherhood. With interactive learning modules,
+      milestone-based insights, and adaptive recommendations, NutriMom is the
+      ultimate companion for mothers looking to make informed dietary choices
+      and nurture their child's growth.
+    </p>
+  </section>
+  
+  <!-- Services -->
+  <section class="services">
+    <h2 class="section-title services-title">Our Services</h2>
+    <div class="services-grid">
+      <!-- Personalization Card -->
+      <div class="service-card">
+        <div class="card-title">Personalization</div>
+        <div class="card-content">
+          <li>Custom Nutrition Plans: AI-driven meal plans tailored to user profiles, including pregnancy stage, child's age, health conditions, and dietary preferences.</li>
+          <li>Dynamic Updates: Plans adapt based on real-time user feedback, such as food aversions or changes in health status.</li>
+          <li>Recommendation Engine: Offers personalized suggestions for meals and snacks, ensuring nutrient adequacy for maternal and child health</li>
+        </div>
+      </div>
+      
+      <!-- Education Card -->
+      <div class="service-card">
+        <div class="card-title">Education</div>
+        <div class="card-content">
+          <li>Interactive Learning Modules: Quizzes and videos on topics like food safety during pregnancy, breastfeeding nutrition, and introducing solids.</li>
+          <li>Weekly Milestones: Insights on maternal and child development stages with corresponding dietary recommendations.</li>
+          <li>Nutritional Glossary: A comprehensive library explaining key nutrients, their importance, and sources to make informed dietary choices.</li>
+        </div>
+      </div>
+      
+      <!-- Practice Tools Card -->
+      <div class="service-card">
+        <div class="card-title">Practice Tools</div>
+        <div class="card-content">
+            <ul>
+          <li>Nutrient-Focused Recipes: Easy-to follow, family-friendly recipes designed to meet dietary needs like folate, iron, and omega-3.</li>
+          <li>Real-Time Tracking: Log meals, track nutrient intake, and get instant feedback to stay on track with health goals.</li>
+          <li>Community & Expert Access: Engage in support forums and consult certified nutritionists directly via the app.</li>
         </ul>
-        <button class="login-btn">Sign In / Log In</button>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Your Pregnancy, Your Nutrition <br> 
-                — Guided by <span class="highlight">NutriMom.AI</span></h1>
         </div>
-        <div class="hero-image">
-            <img src="your-image-path.jpg" alt="Pregnant Woman Illustration">
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section class="about">
-        <h2>What is NutriMom.AI</h2>
-        <p>NutriMom is an AI-powered platform designed to provide personalized nutrition guidance for pregnant women and mothers...</p>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-container">
-            <div class="service-box">
-                <h3>Personalization</h3>
-                <ul>
-                    <li>Custom AI-driven meal plans</li>
-                    <li>Dynamic updates based on user feedback</li>
-                </ul>
-            </div>
-            <div class="service-box">
-                <h3>Education</h3>
-                <ul>
-                    <li>Learning modules & quizzes</li>
-                    <li>Weekly milestones for pregnancy</li>
-                </ul>
-            </div>
-            <div class="service-box">
-                <h3>Practice Tools</h3>
-                <ul>
-                    <li>Family-friendly recipes</li>
-                    <li>Real-time meal tracking</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Made with ❤️ by <a href="#">Hackit Developers</a>.</p>
-    </footer>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    Made With ❤️ by <span>Hackit Developers</span>.
+  </footer>
+  
+  <script>
+    // Simple toggle menu functionality
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      alert('Mobile menu clicked - would toggle menu in full implementation');
+    });
+    
+    document.querySelector('.login-btn').addEventListener('click', function() {
+      console.log('Login clicked');
+    });
+  </script>
 </body>
 </html>
