@@ -12,18 +12,18 @@ else:
     print(f"⚠ Error: {filename} not found! Make sure data collection (Step 1) is completed.")
     exit()
 
-# 1️⃣ Handle Missing Values
+#  Handle Missing Values
 numerical_columns = ["Age", "Pregnancy Month", "Blood Pressure (BP)", "Sugar Level (mg/dL)", "Weight (kg)", "Hydration (glasses of water per day)"]
 df[numerical_columns] = df[numerical_columns].fillna(df[numerical_columns].mean())
 
 # Fill missing categorical values with "None"
 df["Symptoms"] = df["Symptoms"].fillna("None")
 
-# 2️⃣ Normalize Numerical Data
+#  Normalize Numerical Data
 scaler = MinMaxScaler()
 df[numerical_columns] = scaler.fit_transform(df[numerical_columns])
 
-# 3️⃣ Convert Symptoms into Structured Data (One-Hot Encoding)
+# Convert Symptoms into Structured Data (One-Hot Encoding)
 symptom_list = ["Fatigue", "Nausea", "Dizziness", "Headache", "Vomiting"]
 for symptom in symptom_list:
     df[symptom] = df["Symptoms"].apply(lambda x: 1 if symptom.lower() in x.lower() else 0)
@@ -31,8 +31,8 @@ for symptom in symptom_list:
 # Drop the original Symptoms column
 df.drop(columns=["Symptoms"], inplace=True)
 
-# 4️⃣ Save the Cleaned Data
+#  Save the Cleaned Data
 cleaned_filename = "cleaned_health_data.csv"
 df.to_csv(cleaned_filename, index=False)
 
-print("\n✅ Data Cleaning Completed! Cleaned file saved as:", cleaned_filename)
+print("\n Data Cleaning Completed! Cleaned file saved as:", cleaned_filename)
