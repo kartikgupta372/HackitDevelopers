@@ -1,0 +1,12 @@
+USE nutrimom_db; -- Make sure the database is selected
+CREATE TABLE SymptomLog (
+    SymptomLogID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    UserID INT UNSIGNED,
+    LogDate DATE,
+    Symptom VARCHAR(255),
+    Severity INT,
+    Mood VARCHAR(50),
+    SleepQuality INT,
+    Notes TEXT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);

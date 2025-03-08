@@ -1,0 +1,13 @@
+USE nutrimom_db; -- Make sure the database is selected
+CREATE TABLE WeeklyUpdates (
+    WeeklyUpdateID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    UserID INT UNSIGNED,
+    UpdateDate DATE,
+    WaterIntake FLOAT,
+    ExerciseSummary TEXT,
+    DietaryNotes TEXT,
+    BloodPressureSystolic INT,
+    BloodPressureDiastolic INT,
+    FetalMovement TEXT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
