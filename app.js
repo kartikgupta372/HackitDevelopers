@@ -48,7 +48,7 @@ function redirectToSignUp() {
     };
 
     try {
-        const response = await fetch("https://your-api.onrender.com/get_recommendation", {
+        const response = await fetch("https://https://hackitdevelopers-1.onrender.com/get_recommendation", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData)
