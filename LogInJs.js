@@ -1,25 +1,23 @@
-// Open Sign In page
-function openSignin() {
-    window.location.href = "SignUpCss.html";
+// Open Login page
+function openLogin() {
+    window.location.href = "LogInHtml.html";
 }
 
 // Handle form submission
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("signin-form");
+    const form = document.getElementById("login-form");
 
     if (form) {
         form.addEventListener("submit", async function (e) {
             e.preventDefault();
 
             const formData = {
-                name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
-                age: document.getElementById("age").value,
-                diet: document.getElementById("diet").value
+                password: document.getElementById("password").value
             };
 
             try {
-                const response = await fetch("http://localhost:3000/api/signup", {
+                const response = await fetch("http://localhost:3000/api/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(formData)
@@ -27,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const data = await response.json();
                 if (data.success) {
-                    alert("Sign In Successful!");
+                    alert("Login Successful!");
                     window.location.href = "index.html"; // Redirect to home
                 } else {
                     alert("Error: " + data.message);

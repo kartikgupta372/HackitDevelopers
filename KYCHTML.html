@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriMomAI Sign Up Form</title>
+    <link rel="stylesheet" href="KYCCSS.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="navbar">
+        <div class="logo-container">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/2d5bbe28e1b8026002230f8eb0a3ee2a2594572b"
+            class="logo-image"
+            alt="Logo"
+          />
+          <div class="logo-text">
+            <span class="logo-green">NutriMom</span>
+            <span class="logo-white">AI</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <h1 class="title">Sign Up Form</h1>
+
+        <form id="signupForm">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="firstName">First Name</label>
+              <input id="firstName" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" type="text" required />
+            </div>
+            <div class="form-field full-width">
+              <label for="address">Address</label>
+              <input id="address" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="bloodGroup">Blood Group</label>
+              <input id="bloodGroup" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="dateOfBirth">Date of Birth</label>
+              <input id="dateOfBirth" type="date" required />
+            </div>
+            <div class="form-field">
+              <label for="height">Height (cm)</label>
+              <input id="height" type="number" required />
+            </div>
+            <div class="form-field">
+              <label for="weight">Weight (Kg)</label>
+              <input id="weight" type="number" required />
+            </div>
+            <div class="form-field">
+              <label for="weekOfPregnancy">Week of Pregnancy</label>
+              <input id="weekOfPregnancy" type="number" required />
+            </div>
+            <div class="form-field">
+              <label for="pregnancyCount">Pregnancy Count</label>
+              <input id="pregnancyCount" type="number" required />
+            </div>
+            <div class="form-field">
+              <label for="complications">Complications</label>
+              <input id="complications" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="preExistingConditions">Pre Existing Conditions</label>
+              <input id="preExistingConditions" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="dietaryPreference">Dietary Preference</label>
+              <input id="dietaryPreference" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="allergies">Allergic to</label>
+              <input id="allergies" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="averageSleepHours">Average Sleep Hours</label>
+              <input id="averageSleepHours" type="number" required />
+            </div>
+            <div class="form-field">
+              <label for="averageWaterIntake">Average Water Intake</label>
+              <input id="averageWaterIntake" type="text" required />
+            </div>
+            <div class="form-field full-width">
+              <label for="recreationalSubstance">Consumption of any Recreational Substance</label>
+              <input id="recreationalSubstance" type="text" required />
+            </div>
+          </div>
+
+          <button type="submit" class="submit-button">Submit</button>
+        </form>
+      </main>
+
+      <footer class="footer">
+        <span>Made With ❤ by</span>
+        <a href="#" class="footer-link">Hackit Developers.</a>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        console.log('Form submitted');
+        // Form submission logic would go here
+      });
+    </script>
+  </body>
+</html>
