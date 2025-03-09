@@ -29,8 +29,8 @@
       <button class="mobile-menu-btn">☰</button>
     </div>
 
-    <!-- Updated Button for Signup/Login Redirection -->
-    <button id="signup-login-btn" class="login-btn">Sign Up / Log In</button>
+    <!-- Open Sign-Up First -->
+    <button onclick="openSignup()" class="login-btn">Sign Up / Log In</button>
   </nav>
   
   <!-- Hero Section -->
@@ -56,10 +56,25 @@
   </footer>
 
   <script>
-    // Redirect to Signup or Login Page
-    document.getElementById("signup-login-btn").addEventListener("click", function () {
-        window.location.href = "signup.html"; // Redirect to SignUp page
-    });
+    // Open & Close Modals
+    function openSignup() {
+      document.getElementById("signup-modal").style.display = "block";
+    }
+    function closeSignup() {
+      document.getElementById("signup-modal").style.display = "none";
+    }
+/*************  ✨ Codeium Command ⭐  *************/
+    /**
+     * Open the login modal and close the signup modal if it's open.
+     */
+/******  51612083-2f8f-4934-8fbb-901bc63b33cf  *******/
+    function openLogin() {
+      closeSignup();
+      document.getElementById("login-modal").style.display = "block";
+    }
+    function closeLogin() {
+      document.getElementById("login-modal").style.display = "none";
+    }
   </script>
 </body>
 </html>
