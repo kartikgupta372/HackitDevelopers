@@ -1,10 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
     const apiBaseUrl = "http://localhost:3000/api/posts"; // Backend API URL
 
-    // Redirect to Community page when clicking "Community"
+    // ✅ Redirect to Home page
+    document.getElementById("home-link").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "index.html";
+    });
+
+    // ✅ Redirect to Community page
     document.getElementById("community-link").addEventListener("click", function (event) {
         event.preventDefault();
         window.location.href = "community.html";
+    });
+
+    // ✅ Redirect to AI Chat page
+    document.getElementById("chat-link").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "chat.html";
     });
 
     // Function to load posts from backend API
