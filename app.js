@@ -37,4 +37,29 @@ function redirectToLogin() {
 
 function redirectToSignUp() {
     window.location.href = "signup.html";  // Redirects to signup page
-}
+}document.getElementById("aiChatBtn").addEventListener("click", async function () {
+    // Example user data (Modify as needed)
+    const userData = {
+        age: 25,
+        pregnancy_month: 6,
+        diet_type: "Veg",
+        symptoms: "Fatigue, Nausea",
+        weight_category: "Normal"
+    };
+
+    try {
+        const response = await fetch("https://your-api.onrender.com/get_recommendation", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData)
+        });
+
+        const data = await response.json();
+        
+        // Display the AI response in a modal or chat window
+        document.getElementById("aiChatResponse").innerText = data.recommendation;
+    } catch (error) {
+        console.error("Error fetching AI recommendation:", error);
+    }
+});
+
