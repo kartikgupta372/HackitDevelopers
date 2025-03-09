@@ -1,35 +1,26 @@
-const BASE_URL = "http://localhost:3000/api"; // Backend server URL
+// Open login modal
+function openLoginModal() {
+    document.getElementById("login-modal").style.display = "block";
+}
 
-async function login(event) {
-    event.preventDefault(); // Prevent page reload
+// Close login modal
+function closeLoginModal() {
+    document.getElementById("login-modal").style.display = "none";
+}
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+// Handle login form submission
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault(); 
 
-    try {
-        const response = await fetch(`${BASE_URL}/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, password }),
-        });
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-        const data = await response.json();
-
-        if (response.ok) {
+        if (email === "test@example.com" && password === "password123") {
             alert("Login successful!");
-            window.location.href = "dashboard.html"; // Redirect after login
+            closeLoginModal();
         } else {
-            alert(data.message || "Login failed");
+            document.getElementById("login-error").innerText = "Invalid credentials.";
         }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("Something went wrong. Please try again.");
-    }
-}
-
-function redirectToSignUp() {
-    window.location.href = "SignUp.html";
-}
-
+    });
+});

@@ -1,33 +1,27 @@
-const BASE_URL = "http://localhost:3000/api"; // Update with your actual backend URL
+// Open signup modal
+function openSignupModal() {
+    document.getElementById("signup-modal").style.display = "block";
+}
 
-document.getElementById("signupForm").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent page reload
+// Close signup modal
+function closeSignupModal() {
+    document.getElementById("signup-modal").style.display = "none";
+}
 
-    // Collect form data
-    const formData = {};
-    new FormData(this).forEach((value, key) => {
-        formData[key] = value;
-    });
+// Handle signup form submission
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("signup-form").addEventListener("submit", function (e) {
+        e.preventDefault(); 
 
-    try {
-        const response = await fetch(`${BASE_URL}/signup`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-        const data = await response.json();
-
-        if (response.ok) {
-            alert("Sign Up successful!");
-            window.location.href = "dashboard.html"; // Redirect after successful signup
+        if (name && email && password) {
+            alert("Signup successful!");
+            closeSignupModal();
         } else {
-            alert(data.message || "Sign Up failed");
+            document.getElementById("signup-error").innerText = "Please fill all fields.";
         }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
-    }
+    });
 });
