@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriMomAI KYC Form</title>
+    <link rel="stylesheet" href="KYCCSS.css">
+    <script defer src="kyc.js"></script> 
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" class="logo-image" alt="Logo">
+                <div class="logo-text">
+                    <span class="logo-green">NutriMom</span>
+                    <span class="logo-white">AI</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <h1 class="title">Complete Your KYC</h1>
+
+            <form id="kycForm">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" name="firstName" type="text" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" name="lastName" type="text" required>
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="address">Address</label>
+                        <input id="address" name="address" type="text" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="bloodGroup">Blood Group</label>
+                        <input id="bloodGroup" name="bloodGroup" type="text" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input id="dateOfBirth" name="dateOfBirth" type="date" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="height">Height (cm)</label>
+                        <input id="height" name="height" type="number" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="weight">Weight (Kg)</label>
+                        <input id="weight" name="weight" type="number" required>
+                    </div>
+                    <div class="form-field full-width">
+                        <label for="kycDocument">Upload KYC Document (Aadhar/PAN)</label>
+                        <input id="kycDocument" name="kycDocument" type="file" accept=".pdf,.jpg,.png" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Submit KYC</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <span>Made With ❤️ by</span>
+            <a href="#" class="footer-link">Hackit Developers.</a>
+        </footer>
+    </div>
+</body>
+</html>

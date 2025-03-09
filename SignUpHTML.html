@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="SignUpCSS.css">
+    <script defer src="auth.js"></script> 
+</head>
+<body>
+    <main>
+        <div class="auth-container">
+            <section class="content-section">
+                <h1>Sign Up</h1>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up</button>
+                    <p class="error-message" id="signup-error"></p>
+                    <div class="login-text">
+                        <span>Already have an account? </span>
+                        <button type="button" onclick="redirectToLogin()">Log In</button>
+                    </div>
+                </form>
+            </section>
+            <section class="image-section">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bbfc97650ca72ea00bb54f1a86cbcd8f1945aa83" alt="Pregnant woman illustration">
+            </section>
+        </div>
+    </main>
+</body>
+</html>
