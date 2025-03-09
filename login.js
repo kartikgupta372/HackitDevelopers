@@ -1,38 +1,33 @@
-// Open Login page
-function openLogin() {
-    window.location.href = "LogInHtml.html";
-}
-
-// Handle form submission
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("login-form");
+    const loginForm = document.getElementById("login-form");
+    document.getElementById("login-btn").addEventListener("click", function () {
+        window.location.href = "login.html"; // Redirect to Login Page
+    });
 
-    if (form) {
-        form.addEventListener("submit", async function (e) {
-            e.preventDefault();
+    loginForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-            const formData = {
-                email: document.getElementById("email").value,
-                password: document.getElementById("password").value
-            };
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
 
-            try {
-                const response = await fetch("http://localhost:3000/api/login", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData)
-                });
+        try {
+            const response = await fetch("http://localhost:3000/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
 
-                const data = await response.json();
-                if (data.success) {
-                    alert("Login Successful!");
-                    window.location.href = "index.html"; // Redirect to home
-                } else {
-                    alert("Error: " + data.message);
-                }
-            } catch (error) {
-                console.error("Error:", error);
+            const data = await response.json();
+            if (response.ok) {
+                localStorage.setItem("token", data.token);
+                alert("Login successful");
+                closeLogin();
+                window.location.href = "community.html"; // Redirect to community
+            } else {
+                alert(data.msg || "Login failed");
             }
-        });
-    }
+        } catch (error) {
+            console.error("Login Error:", error);
+        }
+    });
 });

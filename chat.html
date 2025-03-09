@@ -3,56 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NutriMomAI</title>
   <link rel="stylesheet" href="chat.css">
+  <title>AI Chat - NutriMom.AI</title>
 </head>
 <body>
-  <div class="container">
-    <header class="navbar">
-      <a href="/" class="logo">
-        <img src="https://cdn.builder.io/api/v1/image/assets/740800abe22b47ee88b2fdd24ee71d38/871a6d5faf9578c9ff69c07025a4eb44c6c57c7dda6af61774b7ff0655363fa3" alt="NutriMomAI Logo">
-        <div class="logo-text">
-          <span class="green-text">NutriMom</span><span class="white-text">AI</span>
-        </div>
-      </a>
 
-      <nav class="nav-links">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/community" class="nav-link">Community</a>
-        <a href="/chat" class="nav-link active">AI Chat</a>
-      </nav>
+  <section class="chat-container">
+    <h2>NutriMom AI Chat</h2>
+    
+    <div id="chat-box"></div>
+    <input type="text" id="chat-input" placeholder="Ask NutriMom AI...">
+    <button id="send-btn">Send</button>
+  </section>
 
-      <div class="user-profile">
-        <div class="user-greeting">Hi, Meher</div>
-        <img src="https://cdn.builder.io/api/v1/image/assets/740800abe22b47ee88b2fdd24ee71d38/d8010fbe81f204b7db1b16292eaf4e6b30482ad0d4e0fcb277e894763697bdd2" alt="User Profile">
-      </div>
-    </header>
+  <script src="chat.js"></script>
 
-    <main class="chat-interface">
-      <div class="hero-text">
-        <span class="black-text">Hey, Want Some Help?</span>
-        <br>
-        <span class="black-text">Your personalized AI assistant</span>
-        <br>
-        <span class="green-text underline">Sakshi</span>
-        <span class="dark-blue-text">is here to help you.</span>
-      </div>
-
-      <div class="message-input-container">
-        <form class="message-form">
-          <div class="message-input-wrapper">
-            <input type="text" placeholder="Type a message..." class="message-input">
-            <button type="submit" class="send-button">
-              <img src="https://cdn.builder.io/api/v1/image/assets/740800abe22b47ee88b2fdd24ee71d38/1156cdecacbb90240ffa72faca5e7cb05c03a8e25fd9a4d6d43b4fe085125efd?placeholderIfAbsent=true" alt="Add Documents">
-            </button>
-          </div>
-        </form>
-      </div>
-    </main>
-
-    <footer class="footer">
-      Made With ❤ by <span class="underline">Hackit Developers.</span>
-    </footer>
-  </div>
 </body>
 </html>

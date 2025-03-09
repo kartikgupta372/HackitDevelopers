@@ -1,32 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const apiBaseUrl = "http://localhost:3000/api/posts"; // Backend API URL
+    const apiBaseUrl = "http://localhost:3000/api/posts";
 
-    // ✅ Redirect to Home page
-    document.getElementById("home-link").addEventListener("click", function (event) {
-        event.preventDefault();
-        window.location.href = "index.html";
-    });
-
-    // ✅ Redirect to Community page
-    document.getElementById("community-link").addEventListener("click", function (event) {
-        event.preventDefault();
-        window.location.href = "community.html";
-    });
-
-    // ✅ Redirect to AI Chat page
-    document.getElementById("chat-link").addEventListener("click", function (event) {
-        event.preventDefault();
-        window.location.href = "chat.html";
-    });
-
-    // Function to load posts from backend API
+    // ✅ Load community posts
     async function loadCommunityPosts() {
         try {
             const response = await fetch(apiBaseUrl);
             const posts = await response.json();
 
             const postsContainer = document.getElementById("community-posts");
-            postsContainer.innerHTML = ""; // Clear existing posts
+            postsContainer.innerHTML = ""; 
 
             posts.forEach(post => {
                 const postElement = document.createElement("div");
@@ -54,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to submit a new post via API
+    // ✅ Submit a new post
     document.getElementById("post-submit").addEventListener("click", async function () {
         const username = document.getElementById("username").value;
         const content = document.getElementById("content").value;
@@ -74,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 document.getElementById("username").value = "";
                 document.getElementById("content").value = "";
-                loadCommunityPosts(); // Refresh posts after adding
+                loadCommunityPosts(); // Refresh posts
             } else {
                 console.error("Failed to add post");
             }
@@ -83,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Function to delete a post via API
+    // ✅ Delete a post
     async function deletePost(postId) {
         try {
             const response = await fetch(`${apiBaseUrl}/${postId}`, {
@@ -91,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                loadCommunityPosts(); // Refresh posts after deleting
+                loadCommunityPosts(); // Refresh posts
             } else {
                 console.error("Failed to delete post");
             }
@@ -100,8 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Load posts on page load
-    if (document.getElementById("community-posts")) {
-        loadCommunityPosts();
-    }
+    loadCommunityPosts();
 });
+

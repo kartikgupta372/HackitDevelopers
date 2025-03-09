@@ -1,40 +1,36 @@
-// Open Sign In page
-function openSignin() {
-    window.location.href = "SignUpCss.html";
-}
-
-// Handle form submission
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("signin-form");
+    const signupForm = document.getElementById("signup-form");
 
-    if (form) {
-        form.addEventListener("submit", async function (e) {
-            e.preventDefault();
+    signupForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-            const formData = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                age: document.getElementById("age").value,
-                diet: document.getElementById("diet").value
-            };
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-            try {
-                const response = await fetch("http://localhost:3000/api/signup", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData)
-                });
+        try {
+            const response = await fetch("http://localhost:3000/auth/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, password })
+            });
 
-                const data = await response.json();
-                if (data.success) {
-                    alert("Sign In Successful!");
-                    window.location.href = "index.html"; // Redirect to home
-                } else {
-                    alert("Error: " + data.message);
-                }
-            } catch (error) {
-                console.error("Error:", error);
+            const data = await response.json();
+            if (response.ok) {
+                alert("Signup successful! Please log in.");
+                closeSignup();
+                openLogin();
+            } else {
+                alert(data.msg || "Signup failed");
             }
-        });
-    }
+        } catch (error) {
+            console.error("Signup Error:", error);
+        }
+    });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("signup-btn").addEventListener("click", function () {
+        window.location.href = "signup.html"; // Redirect to SignUp Page
+    });
+});
+

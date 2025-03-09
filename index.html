@@ -9,13 +9,13 @@
   <script defer src="signup.js"></script>
   <script defer src="login.js"></script>
   <script defer src="community.js"></script>
+  <script defer src="kyc.js"></script>
 </head>
 <body>
-
   <!-- NavBar -->
   <nav>
     <div class="logo-container">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/871a6d5faf9578c9ff69c07025a4eb44c6c57c7dda6af61774b7ff0655363fa3?placeholderIfAbsent=true" alt="NutriMom.AI Logo" class="logo-img">
+      <img src="logo.png" alt="NutriMom.AI Logo" class="logo-img">
       <div class="logo-text">NutriMom<span>AI</span></div>
     </div>
     
@@ -23,18 +23,14 @@
       <a href="index.html" id="home-link">Home</a>
       <a href="community.html" id="community-link">Community</a>
       <a href="chat.html" id="chat-link">AI Chat</a>
-      <button id="aiChatBtn">AI Chat</button>
-      <div id="aiChatResponse" style="margin-top: 20px; font-size: 18px;"></div>
-
-
     </div>
     
     <div class="mobile-nav">
       <button class="mobile-menu-btn">☰</button>
     </div>
 
-    <!-- Open Sign-Up First -->
-    <button onclick="openSignup()" class="login-btn">Sign Up / Log In</button>
+    <!-- Updated Button for Signup/Login Redirection -->
+    <button id="signup-login-btn" class="login-btn">Sign Up / Log In</button>
   </nav>
   
   <!-- Hero Section -->
@@ -49,50 +45,7 @@
         </h1>
       </div>
       <div class="hero-image">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f3c01cde0d5a9b11f46634d1eb47b9d9b646bcd2859d72973d5104a1d451cc58?placeholderIfAbsent=true" alt="Pregnancy Nutrition Guide" class="hero-img">
-      </div>
-    </div>
-  </section>
-  
-  <!-- About Section -->
-  <section class="about">
-    <h2 class="section-title">What is NutriMom.AI</h2>
-    <p class="about-text">
-      NutriMom is an AI-powered app providing personalized nutrition guidance for pregnant women and new mothers. 
-      Using advanced AI, NutriMom creates tailored meal plans, offers expert consultations, and connects mothers 
-      through a supportive community.
-    </p>
-  </section>
-  
-  <!-- Services Section -->
-  <section class="services">
-    <h2 class="section-title services-title">Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="card-title">Personalization</div>
-        <div class="card-content">
-          <li>Custom Nutrition Plans</li>
-          <li>Dynamic Health Updates</li>
-          <li>AI-driven Meal Suggestions</li>
-        </div>
-      </div>
-      
-      <div class="service-card">
-        <div class="card-title">Education</div>
-        <div class="card-content">
-          <li>Learning Modules</li>
-          <li>Weekly Milestones</li>
-          <li>Expert Articles & Videos</li>
-        </div>
-      </div>
-      
-      <div class="service-card">
-        <div class="card-title">Community & Support</div>
-        <div class="card-content">
-          <li>Real-time Tracking</li>
-          <li>Join Support Groups</li>
-          <li>Expert Consultations</li>
-        </div>
+        <img src="hero-image.png" alt="Pregnancy Nutrition Guide" class="hero-img">
       </div>
     </div>
   </section>
@@ -102,55 +55,11 @@
     Made With ❤ by <span>Hackit Developers</span>.
   </footer>
 
-  <!-- Sign-Up Modal -->
-  <div id="signup-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeSignup()">&times;</span>
-      <h2>Sign Up</h2>
-      <form id="signup-form">
-        <input type="text" id="name" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required minlength="6">
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>Already have an account? <a href="#" onclick="openLogin()">Log In</a></p>
-    </div>
-  </div>
-
-  <!-- Login Modal -->
-  <div id="login-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeLogin()">&times;</span>
-      <h2>Log In</h2>
-      <form id="login-form">
-        <input type="email" id="login-email" placeholder="Email" required>
-        <input type="password" id="login-password" placeholder="Password" required>
-        <button type="submit">Log In</button>
-      </form>
-    </div>
-  </div>
-
   <script>
-    // Toggle Mobile Menu
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-      alert('Mobile menu clicked - would toggle menu in full implementation');
+    // Redirect to Signup or Login Page
+    document.getElementById("signup-login-btn").addEventListener("click", function () {
+        window.location.href = "signup.html"; // Redirect to SignUp page
     });
-
-    // Open & Close Modals
-    function openSignup() {
-      document.getElementById("signup-modal").style.display = "block";
-    }
-    function closeSignup() {
-      document.getElementById("signup-modal").style.display = "none";
-    }
-    function openLogin() {
-      closeSignup();
-      document.getElementById("login-modal").style.display = "block";
-    }
-    function closeLogin() {
-      document.getElementById("login-modal").style.display = "none";
-    }
   </script>
-
 </body>
 </html>

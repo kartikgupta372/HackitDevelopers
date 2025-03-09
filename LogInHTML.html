@@ -1,42 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="LogInCSS.css">
-  <script defer src="loginjs.js"></script> 
-  <script defer src="login.js"></script> 
-  <title>Log In Page</title>
-</head>
-<body>
-  <main>
-    <div class="auth-container">
-      <section class="content-section">
-        <h1>Log In</h1>
-        <form id="login-form">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" required>
-          </div>
-          <button type="submit" class="auth-button">Log In</button>
-          <p class="error-message" id="login-error"></p>
-          <div class="login-text">
-            <span>Don't have an account? </span>
-            <button type="button" onclick="redirectToSignUp()">Sign Up</button>
-          </div>
-        </form>
-      </section>
+document.addEventListener("DOMContentLoaded", function () {
+  const loginModal = document.getElementById("login-modal");
+  const loginForm = document.getElementById("login-form");
 
-      <!-- Image Section -->
-      <section class="image-section">
-        <img src="https://cdn.builder.io/api/v1/image/assets/740800abe22b47ee88b2fdd24ee71d38/72420d6e3d92cb1d6f4f4cc2e072cdf787d7de24e243be4859e32db4cb2fcb29?placeholderIfAbsent=true" 
-          alt="Login Illustration">
-      </section>
-    </div>
-  </main>
-</body>
-</html>
+  function openLogin() {
+      loginModal.style.display = "block";
+  }
+
+  function closeLogin() {
+      loginModal.style.display = "none";
+  }
+
+  loginForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+
+      try {
+          const response = await fetch("http://localhost:3000/auth/login", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email, password }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+              localStorage.setItem("token", data.token);
+              alert("Login successful!");
+              closeLogin();
+              window.location.href = "index.html"; // Redirect to homepage
+          } else {
+              alert(data.msg || "Login failed!");
+          }
+      } catch (error) {
+          console.error("Login Error:", error);
+      }
+  });
+
+  window.openLogin = openLogin;
+  window.closeLogin = closeLogin;
+});
